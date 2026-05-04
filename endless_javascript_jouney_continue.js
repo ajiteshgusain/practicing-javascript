@@ -19,9 +19,23 @@
 
 // keyboard event
 
-const keyevent=document.querySelector("#keyinput");
+// const keyevent=document.querySelector("#keyinput");
 
-keyevent.addEventListener("keydown",(event)=>{
+// keyevent.addEventListener("keydown",(event)=>{
 
-    console.log(`key pressed :${event.key}`);
-});
+//     console.log(`key pressed :${event.key}`);
+// });
+
+
+// form event
+
+const form=document.querySelector("#form");
+
+form.addEventListener('submit',(event)=>{
+    //event.preventDefault();
+    alert("form submmited");
+})
+
+
+
+
