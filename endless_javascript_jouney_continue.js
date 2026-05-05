@@ -29,13 +29,58 @@
 
 // form event
 
-const form=document.querySelector("#form");
+// const form=document.querySelector("#form");
 
-form.addEventListener('submit',(event)=>{
-    //event.preventDefault();
-    alert("form submmited");
-})
+// form.addEventListener('submit',(event)=>{
+//     //event.preventDefault();
+//     alert("form submmited");
+// })
+
+//now understanding synchronous and ansyncronous function
+// function  first(){
+//    Second();
+//     console.log("first");
+// }
+
+
+// function Second(){
+
+//     third();
+//     console.log("second")
+// }
+
+
+// function third(){
+//     console.log("third top of the stack");
+// }
+
+// console.log("startting")
+// first();
+
+// console.log("finished");
+
+
+// callback hell
+
+
+// function hwfinish(callback){
+//     console.log("complete your hw ");
+
+
+//     setTimeout(()=>{
+//         console.log("hw done");
+//         callback();
+//     },2000);
+
+// }
+
+// function gotoplayground(){
+//     console.log("now going to the playground.");
+// }
+
+
+// hwfinish(gotoplayground);
 
 
 
-
+// promise 
