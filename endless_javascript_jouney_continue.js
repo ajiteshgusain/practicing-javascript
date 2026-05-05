@@ -75,12 +75,133 @@
 // }
 
 // function gotoplayground(){
-//     console.log("now going to the playground.");
-// }
-
+//     console.log("now going to the playground."); }
 
 // hwfinish(gotoplayground);
 
 
 
 // promise 
+
+// const  homeworkpromise= new  Promise((resolve,reject)=>{
+//     console.log("i  promise to do my hw by tomorrow.");
+
+
+//     setTimeout(()=>{
+//         const didhw=true;
+//         if (didhw){
+//             resolve("i  done my hw please submmited it,!!");
+
+//         }else{
+
+//             reject(" i am laxy  i did'nt  comeplete it !!!");
+//         };
+//     },2000);
+// });
+
+// console.log("wating for him");
+// console.log("took you lomng enough.");
+
+// function delay(ms){
+//     return  new Promise((resolve, reject) => { 
+//         setTimeout(()=>{
+//             resolve(`action compeleted after some time ${ms}`);
+//         },ms);
+
+
+
+//      });
+// }
+
+// console.log("strarting delay ..........");
+// delay(3000).then((message)=>{
+//     console.log(message);
+// })
+
+
+
+
+/// promise chainging
+
+function dohomework(){
+    return new Promise((resolve,reject)=>{
+
+        setTimeout(()=>{
+            let homeworkdone=true;
+            if (homeworkdone){
+                resolve(" i have done my homework!!!");
+            }else{
+                reject("homework not done");
+            };
+
+        },4000);
+    });
+};
+
+
+function dinnereat(){
+    return new Promise((resolve,reject)=>{
+        setTimeout(() => {
+
+            let dinnereaten=true;
+            if(dinnereaten){
+                resolve("you can eat dinner");
+            }else{
+                reject("ajj tuma kahana nahi mi laga!!!");
+            };
+            
+        },3000);
+    })
+}
+
+
+
+function gotoplay(){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            let permission=true;
+
+            if (permission){
+                resolve("you can play");
+            }else{
+                reject("you can not play");
+            };
+        },1000)
+    })
+}
+
+// prmise chaining
+
+// dohomework().then((data)=>{
+//     console.log(data);
+//     return dinnereat().then((data)=>{
+//         console.log(data);
+        
+        
+//         return gotoplay().then((data)=>{
+//             console.log(data);
+//         })
+
+
+//     })
+// }).catch((error)=>{
+//     console.log(error)
+
+
+// }).finally(()=>{
+//     console.log("ended");
+// })
+
+// dohomework()
+//         .then((data)=>{console.log(data);
+//             return dinnereat();
+//         })
+//         .then((data )=>{
+//             console.log(data);
+//             return gotoplay();
+//         })
+//         .then((data)=>{
+//             console.log(data)
+//         })
+
+        
