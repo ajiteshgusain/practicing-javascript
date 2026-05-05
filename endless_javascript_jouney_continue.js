@@ -121,54 +121,54 @@
 
 
 
-/// promise chainging
+// /// promise chainging
 
-function dohomework(){
-    return new Promise((resolve,reject)=>{
+// function dohomework(){
+//     return new Promise((resolve,reject)=>{
 
-        setTimeout(()=>{
-            let homeworkdone=true;
-            if (homeworkdone){
-                resolve(" i have done my homework!!!");
-            }else{
-                reject("homework not done");
-            };
+//         setTimeout(()=>{
+//             let homeworkdone=true;
+//             if (homeworkdone){
+//                 resolve(" i have done my homework!!!");
+//             }else{
+//                 reject("homework not done");
+//             };
 
-        },4000);
-    });
-};
+//         },4000);
+//     });
+// };
 
 
-function dinnereat(){
-    return new Promise((resolve,reject)=>{
-        setTimeout(() => {
+// function dinnereat(){
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(() => {
 
-            let dinnereaten=true;
-            if(dinnereaten){
-                resolve("you can eat dinner");
-            }else{
-                reject("ajj tuma kahana nahi mi laga!!!");
-            };
+//             let dinnereaten=true;
+//             if(dinnereaten){
+//                 resolve("you can eat dinner");
+//             }else{
+//                 reject("ajj tuma kahana nahi mi laga!!!");
+//             };
             
-        },3000);
-    })
-}
+//         },3000);
+//     })
+// }
 
 
 
-function gotoplay(){
-    return new Promise((resolve,reject)=>{
-        setTimeout(()=>{
-            let permission=true;
+// function gotoplay(){
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(()=>{
+//             let permission=true;
 
-            if (permission){
-                resolve("you can play");
-            }else{
-                reject("you can not play");
-            };
-        },1000)
-    })
-}
+//             if (permission){
+//                 resolve("you can play");
+//             }else{
+//                 reject("you can not play");
+//             };
+//         },1000)
+//     })
+// }
 
 // prmise chaining
 
@@ -204,4 +204,99 @@ function gotoplay(){
 //             console.log(data)
 //         })
 
-        
+
+// async and await 
+// this code has no reject it will always succes
+// function orderfood(){
+//     return new Promise((resolve,reject)=>{
+//         console.log("order recieved!!!");
+//         setTimeout(()=>{
+
+//             let odergiven=true;
+
+//             if(odergiven){
+//                 resolve("order is being taken successfully!!");
+//             }
+//             else{
+//                 reject(" please try again");
+//             };
+
+//         },3000)
+
+//     })
+
+// }
+
+
+
+// function preparefood(){
+//     return new Promise((resolve)=>{
+
+//         setTimeout(()=>{
+//             console.log("restaurant has began making food.");
+
+//             resolve();
+
+//         },2000)
+
+
+//         }) 
+// }
+
+// function deliverfood(){
+//     return new Promise((resolve)=>{
+//         setTimeout(()=>{
+
+//             console.log("we delivered the food")
+//             resolve();
+
+//         },1040)
+//     })
+// }
+
+
+
+// async function foodorder(){
+
+//     await orderfood();
+//     await preparefood();
+//     await deliverfood();
+//     console.log("eatting begins");
+    
+// }
+// foodorder()
+
+//  async function getGreeting() {
+//     return ("hello from async!!!!")
+    
+//  }
+
+//  console.log("calling the function !!!!!!......");
+// getGreeting().then((data)=>{
+
+//     console.log("recevied",data);
+// });
+// console.log("function call intiated");
+
+
+// fetch api
+
+async function  fetachusers() {
+    try{
+        const response=await fetch("https://jsonplaceholder.typicode.com/users");
+        if (!response.ok){
+            throw new Error("HTTP error"+response.status);
+        }
+        const data=await response.json();
+        console.log(data);
+
+
+    }
+    catch(error){
+        console.log("fetched failed:",error.message);
+    }
+
+    
+}
+
+fetachusers();
