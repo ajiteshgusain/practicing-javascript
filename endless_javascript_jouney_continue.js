@@ -1,5 +1,7 @@
 // // ques  from ppt 6
 
+const { useId } = require("react");
+
 
 // const hoverbox=document.querySelector("#hover-box");
 // hoverbox.style.width="100px";
@@ -281,22 +283,40 @@
 
 // fetch api
 
-async function  fetachusers() {
+async function  createpost() {
     try{
-        const response=await fetch("https://jsonplaceholder.typicode.com/users");
+        let  response=await fetch("https://jsonplaceholder.typicode.com/users",{
+
+            method:"POST",
+            headers:{
+                "content-type":"application/json"
+            },
+            body:JSON.stringify(
+                {
+                    title:"my new post",
+
+                    body: "this is the conent for the post",
+
+                    useId:1
+
+
+                })
+
+
+        });
         if (!response.ok){
             throw new Error("HTTP error"+response.status);
         }
         const data=await response.json();
-        console.log(data);
+        console.log("send to backend # created:",data);
 
 
     }
     catch(error){
-        console.log("fetched failed:",error.message);
+        console.log("fetched failed:",error);
     }
 
     
 }
 
-fetachusers();
+createpost();
